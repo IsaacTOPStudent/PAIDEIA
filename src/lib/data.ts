@@ -1,6 +1,8 @@
 // TEMPORARY DATA
 
-export let role = "admin";
+import { idText } from "typescript";
+
+export let role = "student";
 
 export const teachersData = [
   {
@@ -125,6 +127,139 @@ export const teachersData = [
   },
 ];
 
+export const reportsData = [
+  {
+    id: 10,
+    title: "report1",
+    description: "este es el reporte 1",
+    date: new Date(2024, 7, 12, 14, 0),
+    psychologist: "psychologist1",
+    student: "student1",
+    disorder: "TDAH",
+  },
+  {
+    id: 10,
+    title: "report2",
+    description: "este es el reporte 2",
+    date: new Date(2024, 7, 12, 14, 0),
+    psychologist: "psychologist2",
+    student: "student2",
+    disorder: "TDAH",
+  }
+]
+export const psychologistsData = [
+  {
+    id: 1,
+    psychologistId: "1234567890",
+    name: "John Doe",
+    email: "john@doe.com",
+    photo:
+      "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    reports: ["report1"],
+  
+    address: "123 Main St, Anytown, USA",
+  },
+  {
+    id: 2,
+    psychologistId: "1234567890",
+    name: "Jane Doe",
+    email: "jane@doe.com",
+    photo:
+      "https://images.pexels.com/photos/936126/pexels-photo-936126.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    reports: ["report1"],
+    address: "123 Main St, Anytown, USA",
+  },
+  {
+    id: 3,
+    psychologistId: "1234567890",
+    name: "Mike Geller",
+    email: "mike@geller.com",
+    photo:
+      "https://images.pexels.com/photos/428328/pexels-photo-428328.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    reports: ["report1"],
+    address: "123 Main St, Anytown, USA",
+  },
+  {
+    id: 4,
+    psychologistId: "1234567890",
+    name: "Jay French",
+    email: "jay@gmail.com",
+    photo:
+      "https://images.pexels.com/photos/1187765/pexels-photo-1187765.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    reports: ["report1"],
+    address: "123 Main St, Anytown, USA",
+  },
+  {
+    id: 5,
+    psychologistId: "1234567890",
+    name: "Jane Smith",
+    email: "jane@gmail.com",
+    photo:
+      "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    reports: ["report1"],
+    address: "123 Main St, Anytown, USA",
+  },
+  {
+    id: 6,
+    psychologistId: "1234567890",
+    name: "Anna Santiago",
+    email: "anna@gmail.com",
+    photo:
+      "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    reports: ["report1"],
+    address: "123 Main St, Anytown, USA",
+  },
+  {
+    id: 7,
+    psychologistId: "1234567890",
+    name: "Allen Black",
+    email: "allen@black.com",
+    photo:
+      "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    reports: ["report1"],
+    address: "123 Main St, Anytown, USA",
+  },
+  {
+    id: 8,
+    psychologistId: "1234567890",
+    name: "Ophelia Castro",
+    email: "ophelia@castro.com",
+    photo:
+      "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    reports: ["report1"],
+    address: "123 Main St, Anytown, USA",
+  },
+  {
+    id: 9,
+    psychologistId: "1234567890",
+    name: "Derek Briggs",
+    email: "derek@briggs.com",
+    photo:
+      "https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    reports: ["report1"],
+    address: "123 Main St, Anytown, USA",
+  },
+  {
+    id: 10,
+    psichologistId: "1234567890",
+    name: "John Glover",
+    email: "john@glover.com",
+    photo:
+      "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    reports:["report1"],
+    address: "123 Main St, Anytown, USA",
+  },
+];
 export const studentsData = [
   {
     id: 1,

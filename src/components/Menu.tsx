@@ -1,4 +1,5 @@
-import { role } from "@/lib/data";
+
+import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,7 +11,7 @@ const menuItems = [
         icon: "/home.png",
         label: "Home",
         href: "/",
-        visible: ["admin", "teacher", "student", "parent"],
+        visible: ["admin", "teacher", "student", "parent", "psychologist"],
       },
       {
         icon: "/teacher.png",
@@ -22,13 +23,25 @@ const menuItems = [
         icon: "/student.png",
         label: "Students",
         href: "/list/students",
-        visible: ["admin", "teacher"],
+        visible: ["admin", "teacher", "psychologist"],
+      },
+      {
+        icon: "/psico.png",
+        label: "Psychologists", 
+        href: "/list/psychologists",
+        visible: ["admin", "psychologist"]
       },
       {
         icon: "/parent.png",
         label: "Parents",
         href: "/list/parents",
-        visible: ["admin", "teacher"],
+        visible: ["admin", "teacher", "psychologist"],
+      },
+      {
+        icon: "/reports.png",
+        label: "Reports",
+        href: "/list/reports",
+        visible: ["admin", "parent", "psychologist", "teacher"],
       },
       {
         icon: "/subject.png",
@@ -76,19 +89,19 @@ const menuItems = [
         icon: "/calendar.png",
         label: "Events",
         href: "/list/events",
-        visible: ["admin", "teacher", "student", "parent"],
+        visible: ["admin", "teacher", "student", "parent", "psychologist"],
       },
       {
         icon: "/message.png",
         label: "Messages",
         href: "/list/messages",
-        visible: ["admin", "teacher", "student", "parent"],
+        visible: ["admin", "teacher", "student", "parent", "psychologist"],
       },
       {
         icon: "/announcement.png",
         label: "Announcements",
         href: "/list/announcements",
-        visible: ["admin", "teacher", "student", "parent"],
+        visible: ["admin", "teacher", "student", "parent", "psychologist"],
       },
     ],
   },
@@ -99,25 +112,28 @@ const menuItems = [
         icon: "/profile.png",
         label: "Profile",
         href: "/profile",
-        visible: ["admin", "teacher", "student", "parent"],
+        visible: ["admin", "teacher", "student", "parent", "psychologist"],
       },
       {
         icon: "/setting.png",
         label: "Settings",
         href: "/settings",
-        visible: ["admin", "teacher", "student", "parent"],
+        visible: ["admin", "teacher", "student", "parent", "psychologist"],
       },
       {
         icon: "/logout.png",
         label: "Logout",
         href: "/logout",
-        visible: ["admin", "teacher", "student", "parent"],
+        visible: ["admin", "teacher", "student", "parent", "psychologist"],
       },
     ],
   },
 ];
 
-const Menu = () => {
+const Menu = async () => {
+
+  const user = await currentUser()
+  const role = user?.publicMetadata.role as string;
   return (
     <div className="mt-4 text-sm">
       {menuItems.map((i) => (
